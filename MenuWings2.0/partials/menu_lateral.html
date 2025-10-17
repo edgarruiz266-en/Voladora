@@ -1,0 +1,50 @@
+<!-- ============================
+📁 partials/menu-lateral.html
+Menú lateral reutilizable
+============================ -->
+
+<!-- Botón del menú hamburguesa -->
+<button class="menu-btn" id="menu-btn" aria-label="Abrir menú" aria-controls="menu-lateral" aria-expanded="false">
+  <span class="linea"></span>
+  <span class="linea"></span>
+  <span class="linea"></span>
+</button>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+
+<!-- Panel lateral -->
+<nav class="menu-lateral" id="menu-lateral" aria-label="Menú lateral">
+  <!-- Botón de cierre -->
+  <button class="cerrar-btn" id="cerrar-btn" aria-label="Cerrar menú">&times;</button>
+
+  <!-- Lista de enlaces -->
+  <ul class="menu-lista">
+    <li class="titulo-menu">MENÚ</li>
+
+    <!-- ✅ Este enlace YA NO navega: abre el modal -->
+    <li>
+      <a href="alitas.html"
+         data-modal-trigger="alitas"
+         aria-controls="alitas-modal"
+         aria-haspopup="dialog">
+        <strong>ALITAS Y BONELESS</strong>
+      </a>
+    </li>
+
+    <li><a href="entradas.html"><strong>ENTRADAS</strong></a></li>
+    <li><a href="complementos.html"><strong>COMPLEMENTOS</strong></a></li>
+    <li><a href="postres.html"><strong>POSTRES</strong></a></li>
+    <li><a href="bebidas.html"><strong>BEBIDAS</strong></a></li>
+    <li><a href="combos.html"><strong>COMBOS</strong></a></li>
+    <li><a href="ensaladas.html"><strong>ENSALADAS</strong></a></li>
+    <li><a href="hamburguesas.html"><strong>HAMBURGUESAS</strong></a></li>
+    <li><a href="otros.html"><strong>OTROS</strong></a></li>
+  </ul>
+
+  <!-- Footer del menú -->
+  <div class="menu-footer">
+    <a href="sobrrenosotros.html" class="footer-link">SOBRE NOSOTROS</a>
+    <a href="#" class="footer-link">AVISO DE PRIVACIDAD</a>
+    <a href="#" class="footer-link">TÉRMINOS Y CONDICIONES</a>
+  </div>
+</nav>

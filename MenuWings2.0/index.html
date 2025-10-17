@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menú - Ordena</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="theme-glass">
+
+  <!-- 📌 Contenedor donde se insertará el menú lateral -->
+  <!-- En la raíz usamos base="menu/" para que los href del partial apunten a /menu/*.html -->
+  <div id="sidebar-root" data-base="menu/"></div>
+
+  <!-- 📌 Encabezado -->
+  <header>
+    <img src="img/logo.png" alt="Logo La Voladora" class="logo" />
+    <h1>LA VOLADORA</h1>
+    <p class="subtitulo">NUESTRO MENÚ</p>
+  </header>
+
+  <!-- 📌 Contenido principal -->
+  <main class="menu">
+    <!-- ✅ ALITAS: abre modal -->
+    <div class="opcion">
+      <img src="img/alitas.png" alt="Alitas y Boneless" data-modal="alitas" />
+    </div>
+
+    <!-- ✅ Estas imágenes navegan a sus páginas con card-links.js -->
+    <div class="opcion">
+      <img src="img/entradas.png" alt="Entradas" data-link="entradas.html" />
+    </div>
+
+    <div class="opcion">
+      <img src="img/complementos.png" alt="Complementos" data-link="complementos.html" />
+    </div>
+
+    <div class="opcion">
+      <img src="img/postres.png" alt="Postres" data-link="postres.html" />
+    </div>
+
+    <div class="opcion">
+      <img src="img/bebidas.png" alt="Bebidas" data-link="bebidas.html" />
+    </div>
+
+    <div class="opcion">
+      <img src="img/combos.png" alt="Especialidad" data-link="combos.html" />
+    </div>
+  </main>
+
+  <!-- 📌 Footer -->
+  <footer>
+    <p>© 2025 Tu Restaurante - Todos los derechos reservados</p>
+  </footer>
+
+  <!-- ✅ MODAL: ALITAS / BONELESS / MIXTO -->
+  <div id="alitas-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="alitas-title">
+      <button class="modal-close" type="button" aria-label="Cerrar" data-close>×</button>
+
+      <h2 id="alitas-title">Elige tu opción</h2>
+      <p class="modal-sub">Selecciona el producto de tu preferencia:</p>
+
+      <div class="modal-list">
+        <button class="modal-item" data-opt="alitas">ALITAS</button>
+        <button class="modal-item" data-opt="boneless">BONELESS</button>
+        <button class="modal-item" data-opt="mixto">MIXTO</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 📌 Scripts externos -->
+  <script type="module" src="assets/js/sidebar-loader.js"></script>
+  <script src="script.js"></script>
+  <script type="module" src="assets/js/modal-alitas.js"></script>
+  <script type="module" src="assets/js/card-links.js"></script>
+</body>
+</html>

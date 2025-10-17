@@ -1,0 +1,262 @@
+/* ========== CATÁLOGO (Encapsulado) ========== */
+/* Wrapper que encapsula todo y evita choques con el global */
+.catalog {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0 20px;              /* Espaciado horizontal */
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;          /* Centrado de todo */
+  min-height: 100dvh;
+  box-sizing: border-box;
+}
+
+/* Encabezado del catálogo */
+.catalog-header {
+  width: 100%;
+  text-align: center;           /* Centrar el logo */
+  margin-top: 20px;
+}
+
+.catalog-logo {
+  width: 150px;                 /* Tamaño del logo */
+  height: auto;
+}
+
+/* Contenedor principal y título */
+.catalog-main {
+  width: 100%;
+  max-width: 900px;             /* Ancho del catálogo */
+  text-align: center;           /* Centrar el título */
+  margin-top: 20px;
+}
+
+.catalog-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+/* Lista de productos */
+.catalog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;                    /* Espaciado entre productos */
+  align-items: center;          /* Centrar productos */
+  width: 100%;
+}
+
+/* Tarjeta de producto */
+.catalog-product {
+  display: flex;
+  flex-direction: row;          /* Imagen y texto lado a lado */
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1000px;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.catalog-img {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;          /* Mostrar completa sin recortes */
+  border-radius: 10px;
+  margin-right: 30px;           /* Espacio entre imagen y detalles */
+}
+
+.catalog-info {
+  flex: 1;
+}
+
+.catalog-info h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.catalog-info p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.catalog-price {
+  font-weight: bold;
+  color: #e74c3c;
+  margin-top: 10px;
+}
+
+.catalog-add {
+  padding: 12px 30px;
+  background-color: #2ecc71;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  margin-top: 15px;
+}
+.catalog-add:hover { background-color: #27ae60; }
+
+/* ======= Responsivo ======= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .catalog-product {
+    flex-direction: column;     /* Imagen y texto en columna */
+    padding: 25px;
+    width: 90%;
+    max-width: 700px;
+  }
+  .catalog-img {
+    width: 220px;
+    height: 220px;
+    margin-right: 0;
+    margin-bottom: 14px;
+  }
+  .catalog-info h3 { font-size: 1.6rem; }
+  .catalog-price   { font-size: 1.1rem; }
+  .catalog-add     { font-size: 1rem; }
+  .catalog-title   { font-size: 2rem; }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+  .catalog-product {
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+  }
+  .catalog-img {
+    width: 200px;
+    height: 200px;
+  }
+  .catalog-info h3 { font-size: 1.5rem; }
+  .catalog-price   { font-size: 1rem; }
+  .catalog-add {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+  .catalog-title { font-size: 2rem; }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .catalog-info h3 { font-size: 1.3rem; }
+  .catalog-price   { font-size: 0.9rem; }
+  .catalog-add     { font-size: 0.9rem; }
+  .catalog-img {
+    width: 180px;
+    height: 180px;
+  }
+  .catalog-title { font-size: 1.8rem; }
+}
+/* Flecha estética de regreso (encapsulada) */
+/* Flecha regreso: ícono pequeño + área clic grande */
+.catalog-main { position: relative; }
+
+.catalog-back-arrow{
+  position: absolute;
+  left: -12px;             /* saca un poco del bloque, ajusta a gusto */
+  top: 2px;                /* alinea vertical con el título */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 10px;       /* ⬅️ amplia el área sin deformar el ícono */
+  color: #1f1f1f;
+  text-decoration: none;
+  transition: color .15s ease, transform .15s ease;
+}
+/* Base: por si la usas también en desktop cerca del título */
+.catalog-back-arrow{
+  display:inline-flex; align-items:center; justify-content:center;
+  color:#1f1f1f; text-decoration:none; transition:color .15s ease, transform .15s ease;
+}
+.catalog-back-arrow .icon{ width:32px; height:22px; display:block; }
+.catalog-back-arrow:hover{ color:#0c6; transform:translateX(-2px); }
+/* mantener tamaño del icono, solo engrosar el trazo */
+
+/* engrosa el trazo del SVG sin tocar el HTML */
+
+
+/* Hover: verde + leve nudge */
+/* Área táctil aún más grande, sin cambiar layout */
+.catalog-back-arrow::after{
+  content: "";
+  position: absolute;
+  inset: -8px;             /* hit area ampliada */
+}
+
+
+
+
+
+
+
+
+
+
+/* 📱 Móvil/Tablet: coloca la flecha debajo del logo, pegada a la izquierda */
+.catalog-header{ position:relative; }
+
+/* Grosor base (desktop) */
+.catalog-back-arrow .icon path{
+  stroke-width: 2;   /* sube/baja a gusto */
+}
+
+/* Flecha debajo del logo en móvil/tablet */
+@media (max-width: 768px){
+  .catalog-header{ position:relative; padding-bottom: 26px; }
+
+  .catalog-back-arrow{
+    position:absolute;
+    left:12px;
+    top:auto;              /* 🔑 anula el top previo */
+    bottom:-1px;          /* ahora sí baja */
+    padding:8px 6px;
+    z-index:2;
+  }
+}
+
+/* Extra pequeño */
+@media (max-width: 420px){
+  .catalog-header{ padding-bottom: 24px; }
+  .catalog-back-arrow{
+    left:10px;
+    top:auto;              /* por si acaso */
+    bottom:-1px;          /* ajusta a tu gusto */
+  }
+}
+
+/* === Escritorio (>=769px): coloca la flecha igual que en responsive === */
+@media (min-width: 769px){
+  .catalog-header{
+    position: relative;
+    padding-bottom: 26px;     /* espacio para la flecha debajo del logo */
+  }
+  .catalog-back-arrow{
+    position: absolute;
+    left: 150px;               /* pegada al margen izquierdo del header */
+    top: auto;                /* anula cualquier top previo */
+    bottom: -22px;            /* misma lógica que en móvil */
+    padding: 8px 6px;         /* hit area cómoda */
+    z-index: 2;
+  }
+  /* Tamaño del ícono y grosor que escalan con el ancho de la ventana */
+  .catalog-back-arrow .icon{
+    width: clamp(26px, 2.2vw, 34px);
+    height: clamp(18px, 1.5vw, 24px);
+  }
+  .catalog-back-arrow .icon path{
+    stroke-width: clamp(2px, 0.35vw, 4.5px);
+  }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menú de Alitas</title>
+
+  <!-- 1) CSS global primero (incluye estilos del modal y sidebar) -->
+  <link rel="stylesheet" href="../style.css" />
+  <!-- 2) CSS específico de esta página (encapsulado) -->
+  <link rel="stylesheet" href="stylemenu.css" />
+</head>
+<body>
+  <!-- Sidebar en páginas /menu/: base="" para que los href apunten a hermanos -->
+  <div id="sidebar-root" data-base=""></div>
+
+  <!-- Catálogo encapsulado -->
+  <div class="catalog">
+    <header class="catalog-header">
+      <img src="../img/logo.png" alt="Logo La Voladora" class="catalog-logo">
+      <!-- 🔙 Flecha de regreso al index -->
+  <!-- 🔙 Flecha back -->
+  <a href="../index.html" class="catalog-back-arrow" aria-label="Regresar" title="Regresar">
+    <svg viewBox="0 0 28 20" class="icon" aria-hidden="true">
+      <path d="M26 10 H7" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+      <path d="M11 5 L6 10 L11 15" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+    </header>
+
+    <section class="catalog-main">
+      <h1 class="catalog-title">PIEZAS ALITAS</h1>
+
+      <div class="catalog-list">
+        <!-- Producto 1 -->
+        <div class="catalog-product">
+          <img src="../img/alitas/10-piezas.png" alt="10 Piezas Alitas" class="catalog-img">
+          <div class="catalog-info">
+            <h3>10 Piezas Alitas</h3>
+            <p>2 salsas</p>
+            <p class="catalog-price">$199.00</p>
+            <button class="catalog-add">Añadir al carrito</button>
+          </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="catalog-product">
+          <img src="../img/alitas/20-piezas.png" alt="20 Piezas Alitas" class="catalog-img">
+          <div class="catalog-info">
+            <h3>20 Piezas Alitas</h3>
+            <p>2 salsas</p>
+            <p class="catalog-price">$394.00</p>
+            <button class="catalog-add">Añadir al carrito</button>
+          </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="catalog-product">
+          <img src="../img/alitas/30-piezas.png" alt="30 Piezas Alitas" class="catalog-img">
+          <div class="catalog-info">
+            <h3>30 Piezas Alitas</h3>
+            <p>3 salsas</p>
+            <p class="catalog-price">$599.00</p>
+            <button class="catalog-add">Añadir al carrito</button>
+          </div>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="catalog-product">
+          <img src="../img/alitas/50-piezas.png" alt="50 Piezas Alitas" class="catalog-img">
+          <div class="catalog-info">
+            <h3>50 Piezas Alitas</h3>
+            <p>4 salsas</p>
+            <p class="catalog-price">$949.00</p>
+            <button class="catalog-add">Añadir al carrito</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+<!-- 📌 Footer -->
+  <footer>
+    <p>© 2025 Tu Restaurante - Todos los derechos reservados</p>
+  </footer>
+  <!-- ✅ MODAL: ALITAS / BONELESS / MIXTO (mismo que en index) -->
+  <div id="alitas-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="alitas-title">
+      <button class="modal-close" type="button" aria-label="Cerrar" data-close>×</button>
+
+      <h2 id="alitas-title">Elige tu opción</h2>
+      <p class="modal-sub">Selecciona el producto de tu preferencia:</p>
+
+      <div class="modal-list">
+        <button class="modal-item" data-opt="alitas">ALITAS</button>
+        <button class="modal-item" data-opt="boneless">BONELESS</button>
+        <button class="modal-item" data-opt="mixto">MIXTO</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="../assets/js/sidebar-loader.js"></script>
+  <!-- Modal en /menu/: rutas internas se construyen con data-base="" -->
+  <script type="module" src="../assets/js/modal-alitas.js"></script>
+</body>
+</html>

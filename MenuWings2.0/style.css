@@ -1,0 +1,795 @@
+/* ===== Reset ===== */
+* { 
+  margin: 0; /* Elimina los márgenes predeterminados de todos los elementos */
+  padding: 0; /* Elimina los rellenos predeterminados de todos los elementos */
+  box-sizing: border-box; /* Incluye el padding y el borde dentro del tamaño total del elemento */
+}
+
+/* ===== Base ===== */
+body {
+  font-family: Arial, sans-serif; /* Define la tipografía general para el cuerpo de la página */
+  background: #fff; /* Establece el fondo blanco para toda la página */
+  color: #000; /* Define el color del texto como negro */
+  text-align: center; /* Centra todo el texto dentro del cuerpo */
+}
+
+/* ===== Header ===== */
+header { 
+  background: #fff; /* Establece el fondo blanco para el header */
+  padding: 40px 20px; /* Agrega relleno alrededor del contenido del header */
+}
+
+header h1 {
+  font-size: 5em; /* Establece un tamaño de fuente grande para el título */
+  font-family: "Poppins", sans-serif; /* Usa la fuente Poppins para el título */
+  font-weight: 800; /* Establece el peso de la fuente como negrita */
+  color: #000; /* Define el color del texto como negro */
+  text-transform: uppercase; /* Convierte el texto a mayúsculas */
+  letter-spacing: 4px; /* Añade espaciado entre las letras */
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* Añade sombra al texto para darle un efecto de profundidad */
+}
+
+.logo { 
+  max-width: 120px; /* Establece un ancho máximo para el logo */
+  margin-bottom: 15px; /* Agrega un margen en la parte inferior del logo */
+}
+
+/* ===== Subtítulo ===== */
+.subtitulo {
+  background: linear-gradient(90deg, #0c6, #00cc66); /* Establece un fondo con gradiente verde */
+  color: #fff; /* Establece el color del texto como blanco */
+  padding: 12px 25px; /* Agrega relleno alrededor del texto */
+  font-size: 1.4em; /* Establece el tamaño de la fuente */
+  border-radius: 12px; /* Redondea las esquinas del subtítulo */
+  text-transform: uppercase; /* Convierte el texto a mayúsculas */
+  font-weight: 800; /* Define el peso de la fuente como negrita */
+  letter-spacing: 2px; /* Añade espaciado entre las letras */
+  box-shadow: 0 0 15px rgba(0,204,102,0.5); /* Agrega un sombreado para darle profundidad al subtítulo */
+  display: inline-block; /* Hace que el subtítulo sea un bloque en línea */
+  margin: 15px auto; /* Centra el subtítulo y le da margen */
+}
+
+/* ===== Grid Menú principal ===== */
+.menu {
+  display: grid; /* Usa un layout de cuadrícula para el menú */
+  grid-template-columns: repeat(3, 1fr); /* Define 3 columnas iguales para el menú */
+  gap: 40px; /* Define un espacio de 40px entre los elementos */
+  padding: 60px; /* Agrega relleno alrededor del menú */
+  justify-items: center; /* Centra los elementos dentro de cada celda de la cuadrícula */
+}
+
+/* ===== Tarjeta de opción ===== */
+.opcion {
+  position: relative; /* Permite que los elementos dentro de .opcion se posicionen relativamente */
+  cursor: pointer; /* Cambia el cursor cuando se pasa sobre el elemento */
+  overflow: hidden; /* Oculta cualquier contenido que sobresalga del borde de la tarjeta */
+  border-radius: 18px; /* Redondea las esquinas de la tarjeta */
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease; /* Agrega transiciones suaves para efectos de transformación, sombra y borde */
+  background: #fff; /* Define el fondo blanco de la tarjeta */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Agrega una sombra difusa para darle profundidad */
+  width: 100%; /* Asegura que la tarjeta ocupe todo el ancho disponible */
+  max-width: 350px; /* Define un ancho máximo para la tarjeta */
+  border: 3px solid transparent; /* Establece un borde transparente para las tarjetas */
+}
+
+.opcion img {
+  width: 100%; /* Hace que las imágenes dentro de la tarjeta ocupen todo el ancho disponible */
+  height: 240px; /* Define una altura fija para las imágenes */
+  object-fit: cover; /* Asegura que la imagen cubra completamente el área sin distorsionarse */
+  border-radius: 18px; /* Redondea las esquinas de las imágenes */
+  transition: transform 0.3s ease; /* Agrega una transición para el efecto de transformación */
+}
+
+.opcion:hover img,
+.opcion:focus img,
+.opcion:active img { 
+  transform: scale(1.08); /* Aumenta ligeramente el tamaño de la imagen al hacer hover, focus o click */
+}
+
+.opcion:hover,
+.opcion:focus,
+.opcion:active {
+  transform: scale(1.03); /* Aumenta ligeramente el tamaño de la tarjeta al hacer hover, focus o click */
+  box-shadow: 0 0 25px rgba(0,204,102,0.6); /* Añade una sombra más fuerte al hacer hover, focus o click */
+  border-color: #0c6; /* Cambia el borde a verde al hacer hover, focus o click */
+}
+
+.opcion p {
+  position: absolute; /* Posiciona el texto dentro de la tarjeta de forma absoluta */
+  bottom: 15px; /* Coloca el texto en la parte inferior de la tarjeta */
+  left: 50%; /* Centra el texto horizontalmente */
+  transform: translateX(-50%); /* Ajusta el texto para que esté perfectamente centrado */
+  background: rgba(0,0,0,0.6); /* Da un fondo oscuro semi-transparente al texto */
+  color: #fff; /* Establece el color del texto como blanco */
+  padding: 8px 18px; /* Da relleno alrededor del texto */
+  border-radius: 10px; /* Redondea las esquinas del fondo del texto */
+  font-size: 1.1em; /* Establece el tamaño de la fuente */
+  font-weight: 700; /* Hace el texto en negrita */
+  margin: 0; /* Elimina los márgenes del párrafo */
+  backdrop-filter: blur(2px); /* Aplica un efecto de desenfoque al fondo del texto */
+}
+/* ===== ESTO ES EL FOTTER ES LA PARTE DE ABAJO DE LA PAGINA ===== */
+/* ===== Utilidades ===== */
+.verde { color: #0c6; }
+/* ===== Footer ===== */
+footer {
+  background: #0c6;
+  color: #fff;
+  padding: 25px;
+  font-weight: 700;
+  margin-top: 50px;
+}
+
+
+/* SEGUNDA PARTE */
+/* ===== Enlaces legales / info ===== */
+.footer-link {
+  display: inline-block; /* Hace que los enlaces se comporten como bloques en línea */
+  margin: 10px 20px; /* Añade márgenes alrededor de cada enlace */
+  color: #333; /* Define el color del texto como gris oscuro */
+  font-family: "Montserrat","Helvetica",sans-serif; /* Establece las fuentes para los enlaces */
+  font-weight: 500; /* Define un peso de fuente semi-negrita */
+  font-size: 1em; /* Establece el tamaño de la fuente a un valor base */
+  letter-spacing: 1px; /* Añade espaciado entre las letras */
+  text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
+  transition: transform 0.3s ease; /* Aplica una transición suave para el efecto de transformación */
+  user-select: text; /* Permite seleccionar el texto del enlace */
+}
+
+.footer-link:hover { 
+  transform: translateY(-2px); /* Al hacer hover, mueve el enlace 2px hacia arriba */
+}
+
+/* ===== Responsive móvil y tablets (mobile-first) ===== */
+
+/* Variables fluidas para texto/espacios en móviles */
+:root{
+  --h1-size: clamp(1.8rem, 4vw + 1rem, 2.4rem); /* Ajusta el tamaño de h1 según el ancho de la pantalla */
+  --sub-size: clamp(1rem, 2.2vw + 0.6rem, 1.2rem); /* Ajusta el tamaño de los subtítulos */
+  --gap: clamp(14px, 4vw, 24px); /* Ajusta el espacio entre los elementos en el grid */
+  --pad: clamp(18px, 5vw, 28px); /* Ajusta el relleno del contenedor */
+}
+
+/* Base: CELULARES (por defecto) */
+header h1 { 
+  font-size: var(--h1-size); /* Usa la variable fluida para el tamaño de h1 */
+}
+
+.subtitulo { 
+  font-size: var(--sub-size); /* Usa la variable fluida para el tamaño de los subtítulos */
+  padding: 8px 14px; /* Relleno ajustado */
+  border-radius: 8px; /* Redondea las esquinas */
+  letter-spacing: .8px; /* Espaciado entre las letras */
+}
+
+.logo { 
+  width: 64px; /* Define un tamaño de logo ajustado */
+}
+
+.menu { 
+  display: grid; /* Usa grid para organizar el menú */
+  grid-template-columns: 1fr; /* Una columna para móviles */
+  gap: var(--gap); /* Espaciado entre elementos */
+  padding: var(--pad); /* Relleno ajustado según el tamaño de la pantalla */
+}
+
+.opcion { 
+  max-width: 440px; /* Establece un tamaño máximo para las tarjetas de opción */
+  margin: 0 auto; /* Centra las tarjetas horizontalmente */
+}
+
+.opcion img { 
+  width: 100%; /* Las imágenes ocupan todo el ancho disponible */
+  height: clamp(150px, 36vw, 190px); /* Establece una altura ajustable para las imágenes */
+  object-fit: cover; /* Mantiene la proporción de la imagen */
+  border-radius: 18px; /* Redondea las esquinas de las imágenes */
+}
+
+.opcion p { 
+  font-size: .95em; /* Ajusta el tamaño del texto dentro de las opciones */
+}
+
+.footer-link { 
+  display: block; /* Cambia los enlaces a bloque para mejor alineación en móviles */
+  margin: 6px 0; /* Márgenes alrededor de los enlaces */
+  font-size: .9em; /* Ajusta el tamaño de la fuente */
+}
+
+/* CELULARES M/L (≥480px) */
+@media (min-width: 480px) {
+  :root { 
+    --h1-size: clamp(2rem, 3.2vw + 1rem, 2.6rem); /* Ajuste del tamaño de h1 en pantallas medianas */
+    --sub-size: clamp(1.05rem, 1.6vw + .7rem, 1.25rem); /* Ajuste del tamaño de subtítulos */
+  }
+
+  .logo { 
+    width: 72px; /* Aumento del tamaño del logo */
+  }
+
+  .opcion { 
+    max-width: 520px; /* Aumento en el tamaño máximo de las tarjetas de opción */
+  }
+
+  .opcion img { 
+    height: clamp(170px, 32vw, 210px); /* Ajusta la altura de las imágenes */
+  }
+}
+
+/* PHABLETS / TABLET PEQUEÑA (≥600px) */
+@media (min-width: 600px) {
+  :root { 
+    --gap: clamp(18px, 3vw, 28px); /* Ajuste del espacio entre los elementos */
+    --pad: clamp(20px, 4vw, 36px); /* Ajuste del relleno */
+  }
+
+  .menu { 
+    grid-template-columns: repeat(2, 1fr); /* Cambia a 2 columnas en pantallas medianas */
+  }
+
+  .footer-link { 
+    display: inline-block; /* Los enlaces se muestran en línea */
+    margin: 6px 12px; /* Ajuste de márgenes */
+    font-size: .95em; /* Ajuste del tamaño de la fuente */
+  }
+
+  .logo { 
+    width: 78px; /* Aumento del tamaño del logo */
+  }
+}
+
+/* TABLETS (≥768px) */
+@media (min-width: 768px) {
+  :root { 
+    --h1-size: clamp(2.2rem, 2.2vw + 1.2rem, 3rem); /* Ajuste del tamaño de h1 */
+    --sub-size: clamp(1.1rem, 1.2vw + .7rem, 1.3rem); /* Ajuste del tamaño de subtítulos */
+  }
+
+  .menu { 
+    gap: 28px; /* Aumenta el espacio entre elementos */
+    padding: 40px; /* Añade más relleno */
+  }
+
+  .opcion img { 
+    height: clamp(200px, 28vw, 240px); /* Ajuste de la altura de las imágenes */
+  }
+
+  .logo { 
+    width: 90px; /* Aumento del tamaño del logo */
+  }
+}
+
+/* TABLET GRANDE / iPad Pro horizontal (≥1024px) */
+@media (min-width: 1024px) {
+  .menu { 
+    grid-template-columns: repeat(3, 1fr); /* Ajuste a 3 columnas en pantallas grandes */
+    gap: 32px; /* Aumento del espacio entre elementos */
+    padding: 48px; /* Aumento del relleno */
+  }
+
+  .logo { 
+    width: 110px; /* Aumento del tamaño del logo */
+  }
+
+  .subtitulo { 
+    padding: 10px 20px; /* Ajuste de relleno */
+    letter-spacing: 1px; /* Aumento del espaciado entre letras */
+  }
+}
+
+/*-----TERCERA PARTE:-------------------------de aqui arriba no se modifica-------------------------------/*
+
+/----AQUI EN ADELANTE SON MODIFICACIONES O HERRAMIENTAS INCLUIDAS COMO MENU LATERAL OPCIONES DE DISEÑO DE OTRAS PAGINAS ETC */
+
+/* =========================================
+   MENÚ LATERAL (solo estilos del sidebar)
+   ========================================= */
+
+/* =========================================
+   MENÚ LATERAL — CSS COMPLETO (corregido)
+   - Hamburguesa: solo líneas verdes en hover/active
+   - Sin rayas verticales a la izquierda de los ítems
+   - Slide + fade al abrir
+   - Scope del panel/lista a #sidebar-root (no toca el resto del sitio)
+   ========================================= */
+
+/* --- BOTÓN HAMBURGUESA (global para que siempre sea visible) --- */
+.menu-btn {
+  position: fixed; /* Posiciona el botón en una ubicación fija en la pantalla */
+  top: 17px; /* Lo coloca a 20px desde la parte superior */
+  left: 20px; /* Lo coloca a 20px desde el borde izquierdo */
+  z-index: 10050; /* Asegura que el botón esté por encima de otros elementos */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  background: transparent; /* El fondo es transparente */
+  border: 0; /* Elimina cualquier borde */
+  padding: 6px; /* Relleno alrededor del botón */
+  border-radius: 10px; /* Redondea las esquinas del botón */
+  display: inline-flex; /* Usa flexbox para organizar las líneas de la hamburguesa */
+  flex-direction: column; /* Organiza las líneas en una columna */
+  align-items: center; /* Centra las líneas horizontalmente */
+  justify-content: center; /* Centra las líneas verticalmente */
+  width: 44px; /* Establece un ancho fijo para el botón */
+  height: 44px; /* Establece una altura fija para el botón */
+  transition: transform .2s ease; /* Aplica una transición suave para las transformaciones */
+}
+
+/* Líneas: estado base en negro */
+.menu-btn .linea {
+  display: block; /* Hace que cada línea sea un bloque */
+  width: 28px; /* Define el ancho de las líneas */
+  height: 3px; /* Define el grosor de las líneas */
+  background: #111; /* Establece el color negro para las líneas */
+  border-radius: 3px; /* Redondea las esquinas de las líneas */
+  margin: 3px 0; /* Agrega un margen entre las líneas */
+  transition: transform .25s ease, background .2s ease; /* Transiciones para el transformado y el color */
+}
+
+/* Solo las líneas cambian a verde en hover/active (sin fondo ni glow) */
+.menu-btn:hover,
+.menu-btn:active {
+  background: transparent !important; /* Elimina el fondo en hover y active */
+  box-shadow: none !important; /* Elimina el sombreado en hover y active */
+}
+
+.menu-btn:hover .linea {
+  background: #0c6; /* Cambia el color de las líneas a verde en hover */
+  transform: scaleX(1.12); /* Aumenta ligeramente el tamaño horizontal de las líneas */
+}
+
+.menu-btn:active .linea {
+  background: #0c6; /* Cambia el color de las líneas a verde cuando se presiona */
+  transform: scaleX(1.00); /* Ajusta el tamaño de las líneas al tamaño original */
+}
+
+
+/* =========================================
+   FLECHA FLOTANTE — Visible por defecto
+   ========================================= */
+
+/* --- PANEL LATERAL (scopeado para no contaminar) --- */
+#sidebar-root .menu-lateral {
+  position: fixed; /* Posiciona el menú lateral de forma fija */
+  top: 0; /* Lo coloca en la parte superior de la página */
+  left: -100% !important; /* Inicialmente, oculta el menú fuera de la pantalla */
+  width: 260px; /* Define el ancho del menú lateral */
+  max-width: 92vw; /* Establece un ancho máximo en relación con el ancho de la pantalla */
+  height: 100vh; /* Asegura que el menú lateral ocupe toda la altura de la pantalla */
+  background: #fff; /* Fondo blanco para el menú */
+  z-index: 10040; /* Asegura que el menú esté por encima de otros elementos */
+  overflow-y: auto; /* Habilita el desplazamiento vertical si el contenido sobrepasa la altura */
+  box-shadow: 4px 0 20px rgba(0,0,0,.18); /* Agrega una sombra al lado derecho del menú para dar profundidad */
+  padding: 22px 18px; /* Relleno dentro del menú */
+  opacity: 0; /* Inicialmente el menú es invisible */
+  transform: translateX(-14px); /* El menú está desplazado ligeramente hacia la izquierda */
+  transition: left .28s ease, opacity .26s ease, transform .26s ease; /* Transiciones suaves para mover el menú y cambiar su opacidad */
+  will-change: left, opacity, transform; /* Indica que estos valores cambiarán, ayudando al navegador a optimizar las transiciones */
+  font-family: inherit; /* Hereda la fuente del documento principal */
+}
+
+#sidebar-root .menu-lateral.abierto {
+  left: 0 !important; /* Cuando el menú está abierto, se mueve a la izquierda */
+  opacity: 1; /* Hace que el menú sea visible */
+  transform: translateX(0); /* El menú se coloca en su posición original */
+}
+
+/* --- CERRAR (X) --- */
+#sidebar-root .cerrar-btn {
+  background: none; /* Elimina el fondo del botón de cerrar */
+  border: none; /* Elimina el borde */
+  font-size: 26px; /* Establece un tamaño grande para el ícono de cerrar */
+  color: #0a0a0a; /* Establece el color del ícono de cerrar */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  float: right; /* Coloca el botón de cerrar a la derecha */
+  line-height: 1; /* Ajusta la altura de la línea */
+  padding: 2px 6px; /* Relleno alrededor del botón */
+  border-radius: 8px; /* Redondea las esquinas del botón */
+  transition: background .2s ease, color .2s ease; /* Agrega transiciones suaves para el fondo y color */
+}
+
+#sidebar-root .cerrar-btn:hover {
+  background: rgba(0,0,0,.06); /* Agrega un fondo sutil en hover */
+  color: #0c6; /* Cambia el color a verde en hover */
+}
+
+/* --- LISTA Y JERARQUÍA --- */
+#sidebar-root .menu-lista {
+  list-style: none; /* Elimina los puntos de las listas */
+  margin: 44px 0 0; /* Ajusta el margen superior de la lista */
+  padding: 0; /* Elimina el padding por defecto */
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+/* “MENÚ” (discreto) */
+#sidebar-root .titulo-menu {
+  font-size: 0.85rem; /* Establece el tamaño de la fuente para el título */
+  font-weight: 700; /* Define el peso de la fuente como negrita */
+  letter-spacing: 0.20em; /* Añade espaciado entre las letras */
+  text-transform: uppercase; /* Convierte el texto a mayúsculas */
+  color: #111; /* Define el color del texto */
+  opacity: .65; /* Hace el texto más tenue */
+  margin: 0 0 8px 2px; /* Ajusta el margen */
+}
+
+/* Etiqueta opcional (p. ej. “MÁS POPULAR”) neutra */
+#sidebar-root .etiqueta {
+  font-size: .86rem; /* Establece el tamaño de la fuente */
+  font-weight: 900; /* Hace el texto más grueso */
+  letter-spacing: .06em; /* Añade espaciado entre las letras */
+  text-transform: uppercase; /* Convierte el texto a mayúsculas */
+  color: #0a0a0a; /* Define el color del texto */
+  opacity: .88; /* Ajusta la opacidad */
+  margin: 12px 0 4px 2px; /* Ajusta los márgenes */
+}
+
+/* Ítems: sangría clara, sin raya vertical izquierda */
+#sidebar-root .menu-lista li {
+  margin: 0; /* Elimina el margen de cada ítem */
+  padding: 0; /* Elimina el relleno de cada ítem */
+}
+
+#sidebar-root .menu-lista li + li {
+  margin-top: 6px; /* Agrega un margen superior entre los elementos */
+}
+/* --- Añadir sangría entre el título del menú y las sublistas --- */
+#sidebar-root .menu-lista li {
+  margin-top: 10px; /* Agrega un margen superior entre los ítems del menú */
+}
+
+/* O puedes añadir un padding en las sublistas (opcional): */
+#sidebar-root .menu-lista a {
+  padding-left: 30px; /* Agrega sangría a las sublistas */
+}
+
+#sidebar-root .menu-lista a {
+  display: block; /* Hace que cada enlace ocupe todo el ancho disponible */
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  color: #0a0a0a; /* Define el color del texto de los enlaces */
+  font-weight: 700; /* Hace el texto en negrita */
+  text-transform: uppercase; /* Convierte el texto a mayúsculas */
+  letter-spacing: .05em; /* Añade espaciado entre las letras */
+  font-size: 0.95rem; /* Establece el tamaño de la fuente */
+  line-height: 1.25; /* Ajusta la altura de la línea */
+  padding: 8px 10px 8px 2px; /* Añade relleno dentro de cada enlace */
+  border-radius: 6px; /* Redondea las esquinas de los enlaces */
+  position: relative; /* Establece la posición relativa para el enlace */
+  transition: color .15s ease, background .15s ease, transform .15s ease; /* Añade transiciones para el color y fondo */
+  padding-left: 28px; /* Agrega sangría a las sublistas */
+
+}
+
+
+/* AQUI INICIA CUARTA PARTE: Quitar completamente la guía vertical izquierda */
+#sidebar-root .menu-lista a::before {
+  content: none !important; /* Elimina cualquier contenido antes del enlace, como una guía o símbolo */
+}
+
+/* Subrayado verde corto al hover/activo */
+#sidebar-root .menu-lista a::after {
+  
+  content: ""; /* Crea un pseudo-elemento vacío después del enlace */
+  position: absolute; /* Posiciona el pseudo-elemento de forma absoluta respecto al enlace */
+  left: 0; /* Coloca el subrayado al principio del enlace */
+  bottom: 2px; /* Coloca el subrayado 2px por encima del borde inferior */
+  width: 40%; /* Establece el ancho del subrayado en un 40% del ancho del enlace */
+  height: 2px; /* Define el grosor del subrayado */
+  background: #0c6; /* Define el color del subrayado como verde */
+  transform: scaleX(0); /* Inicialmente, el subrayado está oculto con un scaleX de 0 */
+  transform-origin: left; /* El subrayado se expande desde la izquierda */
+  transition: transform .2s ease; /* Aplica una transición suave para el subrayado */
+  padding-left: 19px; /* Agrega sangría a las sublistas */
+
+}
+
+
+#sidebar-root .menu-lista a:hover {
+  color: #0c6; /* Cambia el color del texto a verde al hacer hover */
+}
+
+#sidebar-root .menu-lista a:hover::after {
+  transform: scaleX(1); /* Expande el subrayado al 100% al hacer hover */
+}
+
+/* Activo (usa aria-current="page" o .is-active) */
+#sidebar-root .menu-lista a[aria-current="page"],
+#sidebar-root .menu-lista a.is-active {
+  color: #0a0a0a; /* Define el color del texto como gris oscuro cuando el enlace es activo */
+}
+
+#sidebar-root .menu-lista a[aria-current="page"]::after,
+#sidebar-root .menu-lista a.is-active::after {
+  transform: scaleX(1); /* Asegura que el subrayado esté siempre visible en el enlace activo */
+}
+
+/* --- FOOTER DENTRO DEL PANEL --- */
+#sidebar-root .menu-footer {
+  margin-top: 18px; /* Agrega un margen superior al pie de página */
+  padding-top: 12px; /* Agrega relleno superior al pie de página */
+  border-top: 1px solid rgba(0,0,0,.08); /* Añade una línea sutil en la parte superior del pie de página */
+}
+
+#sidebar-root .menu-footer .footer-link {
+  display: block; /* Hace que los enlaces del pie de página ocupen todo el ancho disponible */
+  margin: 6px 0; /* Añade márgenes arriba y abajo de cada enlace */
+  color: #0c6; /* Define el color de los enlaces como verde */
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  font-weight: 800; /* Hace que los enlaces estén en negrita */
+  letter-spacing: .02em; /* Añade un pequeño espaciado entre las letras */
+  text-transform: uppercase; /* Convierte el texto de los enlaces a mayúsculas */
+  transition: opacity .15s ease, transform .15s ease; /* Transiciones suaves para la opacidad y el transformado */
+}
+
+#sidebar-root .menu-footer .footer-link:hover {
+  opacity: .85; /* Reduce la opacidad cuando se pasa el ratón sobre el enlace */
+  transform: translateX(2px); /* Mueve el enlace 2px hacia la derecha al hacer hover */
+}
+
+/* --- RESPONSIVE MÓVIL: panel a ancho completo --- */
+
+/* --- REDUCIR MOVIMIENTO SI EL USUARIO LO PREFIERE --- */
+@media (prefers-reduced-motion: reduce) {
+  #sidebar-root .menu-lateral,
+  .menu-btn, .flecha-flotante,
+  #sidebar-root .menu-lista a, #sidebar-root .cerrar-btn {
+    transition: none !important; /* Desactiva las transiciones para usuarios que prefieren menos movimiento */
+  }
+}
+
+/* ===== Responsive móvil y tablets (mobile-first) ===== */
+
+/* Variables fluidas para texto/espacios en móviles */
+:root {
+  --h1-size: clamp(1.8rem, 4vw + 1rem, 2.4rem); /* Ajuste del tamaño de h1 basado en el ancho de la pantalla */
+  --sub-size: clamp(1rem, 2.2vw + 0.6rem, 1.2rem); /* Ajuste del tamaño de los subtítulos */
+  --gap: clamp(14px, 4vw, 24px); /* Ajuste dinámico del espacio entre elementos */
+  --pad: clamp(18px, 5vw, 28px); /* Ajuste dinámico del padding */
+}
+
+/* Base: CELULARES (por defecto) */
+header h1 { font-size: var(--h1-size); } /* Usa la variable fluida para el tamaño de h1 */
+.subtitulo { 
+  font-size: var(--sub-size); /* Usa la variable fluida para el tamaño de los subtítulos */
+  padding: 8px 14px; /* Relleno alrededor del subtítulo */
+  border-radius: 8px; /* Redondea las esquinas */
+  letter-spacing: .8px; /* Añade espaciado entre las letras */
+}
+
+.logo { 
+  width: 64px; /* Ajusta el tamaño del logo */
+}
+
+/* Para el contenedor de las imágenes */
+.menu {
+  display: grid; /* Usa un grid para organizar el menú */
+  grid-template-columns: 1fr; /* Coloca todos los ítems en una sola columna en móviles */
+  gap: 10px; /* Ajusta el espacio entre los ítems */
+  padding: 10px; /* Añade relleno alrededor del contenedor */
+}
+
+.opcion { 
+  max-width: 440px; /* Establece un tamaño máximo para las tarjetas */
+  margin: 0 auto; /* Centra las tarjetas horizontalmente */
+}
+
+/* Ajuste para las imágenes en el móvil */
+.opcion img {
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho disponible */
+  height: auto; /* Mantiene la relación de aspecto de la imagen */
+  object-fit: cover; /* Asegura que las imágenes se ajusten sin distorsionarse */
+}
+
+.opcion p { 
+  font-size: .95em; /* Ajusta el tamaño del texto */
+}
+
+.footer-link { 
+  display: block; /* Hace que cada enlace ocupe todo el ancho disponible */
+  margin: 6px 0; /* Añade márgenes a los enlaces */
+  font-size: .9em; /* Ajusta el tamaño de la fuente */
+}
+
+/* CELULARES M/L (≥480px) */
+@media (min-width: 480px) {
+  :root { 
+    --h1-size: clamp(2rem, 3.2vw + 1rem, 2.6rem); /* Ajusta el tamaño de h1 para pantallas medianas */
+    --sub-size: clamp(1.05rem, 1.6vw + .7rem, 1.25rem); /* Ajuste del tamaño de los subtítulos */
+  }
+  
+  .logo { 
+    width: 72px; /* Aumento del tamaño del logo */
+  }
+
+  .opcion { 
+    max-width: 520px; /* Aumento del tamaño máximo de las tarjetas */
+  }
+
+  .opcion img { 
+    height: clamp(170px, 32vw, 210px); /* Ajusta la altura de las imágenes */
+  }
+}
+
+/* PHABLETS / TABLET PEQUEÑA (≥600px) */
+@media (min-width: 600px) {
+  :root { 
+    --gap: clamp(18px, 3vw, 28px); /* Ajuste del espacio entre elementos */
+    --pad: clamp(20px, 4vw, 36px); /* Ajuste del padding */
+  }
+
+  .menu {
+    grid-template-columns: repeat(2, 1fr); /* Cambia el menú a 2 columnas en pantallas medianas */
+  }
+
+  .footer-link { 
+    display: inline-block; /* Los enlaces se muestran en línea */
+    margin: 6px 12px; /* Ajusta los márgenes de los enlaces */
+    font-size: .95em; /* Ajusta el tamaño de la fuente */
+  }
+
+  .logo { 
+    width: 78px; /* Aumento del tamaño del logo */
+  }
+}
+
+/* TABLETS (≥768px) */
+@media (min-width: 768px) {
+  :root { 
+    --h1-size: clamp(2.2rem, 2.2vw + 1.2rem, 3rem); /* Ajuste del tamaño de h1 */
+    --sub-size: clamp(1.1rem, 1.2vw + .7rem, 1.3rem); /* Ajuste del tamaño de los subtítulos */
+  }
+
+  .menu { 
+    gap: 28px; /* Aumento del espacio entre elementos */
+    padding: 40px; /* Aumento del relleno alrededor del menú */
+  }
+
+  .opcion img { 
+    height: clamp(200px, 28vw, 240px); /* Ajuste de la altura de las imágenes */
+  }
+
+  .logo { 
+    width: 90px; /* Aumento del tamaño del logo */
+  }
+}
+
+/* TABLET GRANDE / iPad Pro horizontal (≥1024px) */
+@media (min-width: 1024px) {
+  .menu { 
+    grid-template-columns: repeat(3, 1fr); /* Cambia el menú a 3 columnas en pantallas grandes */
+    gap: 32px; /* Aumento del espacio entre elementos */
+    padding: 48px; /* Aumento del relleno */
+  }
+
+  .logo { 
+    width: 110px; /* Aumento del tamaño del logo */
+  }
+
+  .subtitulo { 
+    padding: 10px 20px; /* Ajuste del relleno en el subtítulo */
+    letter-spacing: 1px; /* Aumento del espaciado entre letras */
+  }
+}
+
+/* --- Responsivo para tablets (≥768px y ≤1024px) --- */
+@media (min-width: 768px) and (max-width: 1024px) {
+  #sidebar-root .menu-lateral {
+    width: 60vw !important; /* Reduce el ancho del menú lateral al 60% del ancho de la ventana */
+  }
+}
+
+
+
+/* Reducir el ancho del menú lateral en dispositivos móviles y tablets */
+@media (max-width: 768px) { 
+  #sidebar-root .menu-lateral {
+    width: 64vw !important; /* Reduce el ancho del menú lateral al 60% */
+    max-width: 250px; /* Limita el tamaño máximo */
+
+  }
+
+  /* Añadir sangría dinámica en función del ancho del menú */
+  #sidebar-root .menu-lista a {
+    padding-left: calc(10vw - 10px); /* Aumenta la sangría a medida que se reduce el ancho */
+  }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 1024px) {
+  #sidebar-root .menu-lateral {
+    width: 60vw !important; /* Ajusta el menú lateral al 60% del ancho de la pantalla */
+    max-width: 250px; /* Limita el ancho para evitar que sea demasiado grande */
+  }
+   #sidebar-root .menu-lista a {
+    padding-left: calc(5vw - 5px); /* Aumenta la sangría a medida que se reduce el ancho */
+  }
+}
+
+/* ===== Modal base ===== */
+/* Modal más angosto (y un poquito menos padding) */
+/* En móviles, aún más compacto */
+
+.modal-overlay{
+  position: fixed; inset: 0;                    /* Fija el overlay y lo estira a toda la pantalla */
+  display: none;                                /* Oculto por defecto */
+  align-items: center; justify-content: center; /* Centra el modal dentro del overlay */
+  background: rgba(0,0,0,.5);                   /* Fondo semitransparente oscuro */
+  z-index: 11000;                               /* Por encima del sidebar y demás elementos */
+  opacity: 0;                                   /* Transparente inicialmente (para animación) */
+  transition: opacity .18s ease;                /* Suaviza la aparición/desaparición */
+}
+.modal-overlay.is-open{ display:flex; opacity:1; } /* Cuando está abierto: se muestra y es opaco */
+
+.modal{
+  width: min(90vw, 460px);   /* Ancho del modal: 90% del viewport o 460px, lo que sea menor */
+  background: #fff;          /* Fondo blanco del modal */
+  border-radius: 14px;       /* Esquinas redondeadas */
+  padding: 18px;             /* Separación interna (ligeramente menor para verse más compacto) */
+  box-shadow: 0 15px 40px rgba(0,0,0,.22); /* Sombra para elevar el modal */
+  transform: translateY(8px) scale(.985);   /* Estado inicial: ligeramente abajo y reducido (para animación) */
+  transition: transform .18s ease;          /* Suaviza la transición del transform */
+  position: relative;                       /* Permite posicionar el botón de cierre dentro */
+}
+.modal-overlay.is-open .modal{ transform: translateY(0) scale(1); } /* Al abrir: vuelve a su posición y tamaño */
+
+.modal-close{
+  position: absolute; top: 10px; right: 12px; /* Coloca la “X” en la esquina superior derecha */
+  border: 0; background: transparent;         /* Sin borde ni fondo por defecto */
+  font-size: 26px; line-height: 1;            /* Tamaño del icono y altura de línea compacta */
+  cursor: pointer; color: #111;               /* Cursor de mano y color del icono */
+  border-radius: 8px; padding: 2px 6px;       /* Área clicable cómoda con esquinas redondeadas */
+}
+.modal-close:hover{ color:#0c6; background: rgba(0,0,0,.06); } /* Hover: verde y leve fondo gris */
+
+.modal h2{ margin: 4px 0 2px; font-size: 1.3rem; font-weight: 800; } /* Título del modal, fuerte y compacto */
+.modal-sub{ color:#444; margin-bottom: 12px; }                       /* Subtítulo más tenue y con separación abajo */
+
+/* Lista de botones */
+/* Centrar el texto de los botones del modal */
+/* Lista con más separación */
+.modal-list{
+  display: grid;               /* Usa un grid para apilar los botones */
+  gap: 16px;                   /* Espacio vertical entre botones */
+  margin-top: 10px;            /* Separación respecto al subtítulo */
+}
+
+/* Botones verdes con texto blanco centrado */
+.modal-item{
+  display: flex;                              /* Permite centrar contenido con flexbox */
+  align-items: center; justify-content: center; /* Centrado vertical y horizontal */
+  width: 100%;                                /* Ocupa todo el ancho disponible */
+  min-height: 46px;                           /* Altura mínima cómoda para tocar en móvil */
+  padding: 12px 14px;                         /* Relleno interno del botón */
+  text-align: center;                         /* Alineación del texto (por si hay varias líneas) */
+  background: #0c6;                           /* Fondo verde principal */
+  color: #fff;                                /* Texto blanco */
+  border: 1px solid #0c6;                     /* Borde del mismo verde para un look sólido */
+  border-radius: 10px;                        /* Bordes redondeados */
+  font-weight: 900;                           /* Tipografía bold */
+  text-transform: uppercase;                  /* Texto en mayúsculas */
+  letter-spacing: .02em;                      /* Ligero tracking para legibilidad */
+  cursor: pointer;                            /* Cursor de mano */
+  transition: transform .08s ease,            /* Pequeño “tap” al presionar */
+              background .15s ease,           /* Suaviza cambio de color de fondo */
+              border-color .15s ease,         /* Suaviza cambio de color de borde */
+              color .15s ease,                /* Suaviza cambio de color de texto (si aplica) */
+              box-shadow .15s ease;           /* Suaviza aparición de halo */
+}
+
+.modal-item:hover{
+  background: #0aa65a;                        /* Verde ligeramente más claro al pasar el mouse */
+  border-color: #0aa65a;                      /* Borde acompaña el cambio de fondo */
+  box-shadow: 0 0 0 3px rgba(12,198,115,.18); /* Halo sutil verde para feedback */
+}
+
+.modal-item:active{
+  transform: scale(.99);                      /* Ligero “hundimiento” al presionar */
+  background: #099a54;                        /* Verde un poco más oscuro en active */
+  border-color: #099a54;                      /* Borde acompaña el tono oscuro */
+}
+
+.modal-item:focus{
+  outline: none;                              /* Quita el outline por defecto del navegador */
+  box-shadow: 0 0 0 3px rgba(12,198,115,.28); /* Halo de enfoque accesible y visible */
+}
+
+.modal-item:active{ transform: scale(.99); }  /* (Duplicado) Repite el efecto de “hundimiento” en active */
+@media (max-width: 600px){
+  .modal{ width: min(94vw, 420px); padding: 16px; } /* En móviles: modal un poco más estrecho y con menos padding */
+}

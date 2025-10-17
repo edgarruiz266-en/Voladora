@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menú de Boneless</title>
+
+  <!-- 1) CSS global primero (incluye estilos del modal y sidebar) -->
+  <link rel="stylesheet" href="../style.css" />
+  <!-- 2) CSS específico de esta página (encapsulado) -->
+  <link rel="stylesheet" href="stylemenu.css" />
+</head>
+<body>
+  <!-- Sidebar en páginas /menu/: base="" para que los href apunten a hermanos -->
+  <div id="sidebar-root" data-base=""></div>
+
+  <!-- Catálogo encapsulado -->
+  <div class="catalog">
+    <header class="catalog-header">
+      <img src="../img/logo.png" alt="Logo La Voladora" class="catalog-logo">
+      <!-- 🔙 Flecha de regreso al index -->
+  <!-- 🔙 Flecha back -->
+  <a href="../index.html" class="catalog-back-arrow" aria-label="Regresar" title="Regresar">
+    <svg viewBox="0 0 28 20" class="icon" aria-hidden="true">
+      <path d="M26 10 H7" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+      <path d="M11 5 L6 10 L11 15" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+    </header>
+
+    <section class="catalog-main">
+      <h1 class="catalog-title">ENTRADAS</h1>
+
+      <div class="catalog-list">
+        <!-- Producto 1 -->
+        <div class="catalog-product">
+          <img src="../img/entradas/dedos_queso.png" alt="Mozzarella Sticks" class="catalog-img">
+          <div class="catalog-info">
+            <h3>Mozzarella Sticks</h3>
+            <p>Deliciosos dedos de auténtico 
+                queso mozzarella (6 pzas) que
+                se derriten al morderlos. Servidos 
+                con salsa Original Hot (50ml).</p>
+            <p class="catalog-price">$100.00</p>
+            <button class="catalog-add">Añadir al carrito</button>
+          </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="catalog-product">
+          <img src="../img/entradas/Champiñones_empanizados.png" alt="Veggie Boneless" class="catalog-img">
+          <div class="catalog-info">
+            <h3>Veggie Boneless</h3>
+            <p>Jugosos champiñones (200g) empanizados 
+                al momento con nuestra receta secreta.
+                Servidos con salsa Original Hot (50ml).</p>
+            <p class="catalog-price">$125.00</p>
+            <button class="catalog-add">Añadir al carrito</button>
+          </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="catalog-product">
+          <img src="../img/entradas/aros_cebolla.png" alt="Onion rings" class="catalog-img">
+          <div class="catalog-info">
+            <h3>Onion rings</h3>
+            <p>Aros de cebolla (200 g) crujientes, 
+                empanizados al momento con nuestra
+                 receta secreta. Servidos con salsa 
+                 Original Hot (50 ml).</p>
+            <p class="catalog-price">$129.00</p>
+            <button class="catalog-add">Añadir al carrito</button>
+          </div>
+        </div>
+
+        <!-- Producto 4 -->
+ <!-<div class="catalog-product">
+          
+    </section>
+  </div>  
+
+  
+<!-- 📌 Footer -->
+  <footer>
+    <p>© 2025 Tu Restaurante - Todos los derechos reservados</p>
+  </footer>
+  <!-- ✅ MODAL: ALITAS / BONELESS / MIXTO (mismo que en index) -->
+  <div id="alitas-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="alitas-title">
+      <button class="modal-close" type="button" aria-label="Cerrar" data-close>×</button>
+
+      <h2 id="alitas-title">Elige tu opción</h2>
+      <p class="modal-sub">Selecciona el producto de tu preferencia:</p>
+
+      <div class="modal-list">
+        <button class="modal-item" data-opt="alitas">ALITAS</button>
+        <button class="modal-item" data-opt="boneless">BONELESS</button>
+        <button class="modal-item" data-opt="mixto">MIXTO</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="../assets/js/sidebar-loader.js"></script>
+  <!-- Modal en /menu/: rutas internas se construyen con data-base="" -->
+  <script type="module" src="../assets/js/modal-alitas.js"></script>
+</body>
+</html>
